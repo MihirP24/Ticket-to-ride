@@ -1,0 +1,23 @@
+Developer Name: Mihir Patel (mcpatel) - B00915555
+
+1. File: City.java, Link.java
+   Issue Identified: All classes depends on the concrete class Link,City.It violates the dependency inversion principle.
+   Description of fix: According to dependency inversion principle, all classes must need Interface on which the
+                       classes will depend, so have to make interface for the class i.e. ILink, ICity.
+   Implemented: Created ILink.java and ICity.java (Completely, All test case passed)
+
+2. File: Link.java
+   Issue Identified: According to S(Single responsibility) in SOLID principle,class must have one responsibility
+   Description of fix: Have to create two subclasses one for the one-way link and another for two-way link
+   Implemented: Created subclass OneWayLink.java and TwoWayLink.java ( Completely, All test case passed)
+
+3. File: Link.java ,City.java , RouteCost.java
+   Issue Identified: Member variable of Concrete class City and Link, It violates D(Dependency Inversion Principle) of
+                     SOLID principle
+   Description of fix: Have to change variable object of City to ICity and Link to ILink
+   Implemented: Have created interface class, but haven't change City object to ICity and Link object to ILink
+
+4. File: Link.java
+   Issue Identified: Link class needs to be extendable but not modifiable, but here it was both extendable and modifiable
+   Description of fix: Have to make link class abstract, and two subclasses of Link to extend code as it helps in low coupling.
+   Implemented: Created two subclass, but haven't made the Link class abstract. (All test case passed)
